@@ -5,3 +5,8 @@ Verilen giriş bilgileri ile otomatik olarak sisteme giriş yapar. Final dönemi
 yeni bir harf notu girildiğinde konsol ekranına bildirim geliyor, girdiğiniz mail adresine bir mail geliyor. Böylece ben de yeni bir not girişi olduğunu görüp notlarımı kontrol ediyorum.
 Sistem daha da iyileştirilebilir şimdilik bu kadarını yapabildim.
 
+
+Çalıştırılmadan önce yüklenmesi gereken paketler:
+```sh
+  npm install puppeteer cheerio cron nodemailer
+```
