@@ -71,10 +71,10 @@ async function startTracking(){
 //Mail gönder
 async function sendeNotification(not){
     var transporter = nodemailer.createTransport({
-        service: "outlook",
+        service: "outlook", //outlook, gmail...
         auth:{
-            user: "enescakkr@windowslive.com", //gönderici
-            pass: "Enes_365414"
+            user: "gondericimail@ornek.com", //gönderici
+            pass: "sifre"
         }
     });
 
@@ -82,15 +82,15 @@ async function sendeNotification(not){
     let htmlText = `<a href=\"${url}\">Notları Görmek İçin Tıklayın</a>`;
 
     let info = await transporter.sendMail({
-       from: '"Genel ortalama değişti, yeni ortalama="+not <enescakkr@windowslive.com>',
-       to:"pilavlivar5@gmail.com",//alıcı
+       from: '"Genel ortalama değişti, yeni ortalama="+not <gondericimail@ornek.com>',
+       to:"alicimail@ornek.com",//alıcı
        subject: "Genel ortalama değişti, yeni ortalama="+not,
        text: textToSend,
        html: htmlText,
        attachments:
        {
            filename: 'obsLogin.png',
-           content: fs.createReadStream("C:/Users/DELL/Desktop/ObsNotOrtalamasi/obsLogin.png")
+           content: fs.createReadStream("/Desktop/ObsNotOrtalamasi/obsLogin.png")
        }
     });
 
